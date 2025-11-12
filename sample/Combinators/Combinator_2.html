@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Model Layout</title>
+  <style>
+    * {
+      font-family: 'Georgia', serif;
+      box-sizing: border-box;
+    }
+
+    .section {
+      margin: 20px auto;
+      padding: 32px 24px 16px 24px;
+      width: 90%;
+      border-bottom: 1px solid #817d73;
+      background: #e3ded3;
+    }
+    .section.alt {
+      background: #395f47;
+      color: #e3ded3;
+    }
+
+    .heading {
+      margin-bottom: 18px;
+      font-size: 2.7rem;
+      color: #48504e;
+      font-weight: bold;
+    }
+    .alt .heading {
+      color: #e3ded3;
+    }
+
+    .small-title {
+      font-size: 0.97rem;
+      color: #817d73;
+      font-weight: bold;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .alt .small-title {
+      color: #e3ded3;
+    }
+
+    .heading .highlight, .highlight {
+      color: #4c5a49;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    .alt .heading .highlight, .alt .highlight {
+      color: #e3ded3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <div class="small-title">EVERYONE NEEDS INFINITE DREAMS</div>
+    <div class="heading"><span class="highlight">Enid</span> is an amplification studio that builds brands that <span class="highlight">resound</span>.</div>
+  </div>
+
+  <div class="section alt">
+    <div class="small-title">EACH NEW IDEA DEFINED</div>
+    <div class="heading">We stand firm on <span class="highlight">our values</span> that sit central to <span class="highlight">everything we do</span>.</div>
+  </div>
+
+  <div class="section">
+    <div class="small-title">EVERY NOTE IS DISTINCT</div>
+    <div class="heading">We <span class="highlight">deep-dive</span> into your back catalogue to understand the beat.</div>
+  </div>
+
+</body>
+</html>

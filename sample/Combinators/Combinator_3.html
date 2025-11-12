@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Course Boxes</title>
+    <style>
+        body {
+            background: #f6f9fa;
+        }
+        .parent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .box {
+            width: 380px;
+            border: 1px solid #ececec;
+            border-radius: 20px;
+            padding-bottom: 20px;
+            margin: 10px;
+            background: #fff;
+            box-shadow: 0 6px 30px rgba(41,39,42,0.07);
+            transition: background-color 0.5s, color 0.3s;
+        }
+        .box:hover, .second-button:hover {
+            background-color: #ED0331;
+            color: white;
+        }
+        .box > img {
+            width: 25%;
+            border-radius: 20px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            margin-left: 20px;
+            margin-right: 10px;
+            box-shadow: rgba(99,99,99,0.2) 0px 2px 8px 0px;
+            background: #fff;
+        }
+        .box > div {
+            margin-left: 20px;
+        }
+        .box > div > h1 {
+            color: rgb(105,104,104);
+            font-size: 16px;
+            font-family: "Poppins";
+        }
+        .box > div > h3 {
+            font-size: 22px;
+            font-family: "Poppins";
+        }
+        .pipe {
+            color: red;
+            font-size: 18px;
+            font-weight: bolder;
+        }
+        .date {
+            font-weight: bolder;
+        }
+        .box > div > p {
+            font-family: "Poppins";
+        }
+        .first-button {
+            background-color: #ED0331;
+            width: 35%;
+            height: 30px;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            font-family: "Poppins";
+            cursor: pointer;
+        }
+        .second-button {
+            background-color: white;
+            width: 35%;
+            height: 30px;
+            border-radius: 10px;
+            border: 1px solid #ED0331;
+            color: #ED0331;
+            cursor: pointer;
+        }
+        .first-button:hover {
+            background-color: white;
+            color: #ED0331;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="https://cdn.masaischool.com/masai-website/iim-sirmur-logo.png" alt="IIM Sirmaur logo">
+            <div>
+                <h1>IIM Sirmaur</h1>
+                <h3>EDGE: Essentials of Data Analytics, Gen AI & Execution</h3>
+                <p>06 months <span class="pipe"> | </span> online</p>
+                <p>Qualifier Test - <span class="date">12th Nov 2025</span></p>
+                <button class="first-button">Learn More →</button>
+                <button class="second-button">Brochure →</button>
+            </div>
+        </div>
+        <!-- Box 2 -->
+        <div class="box">
+            <img src="https://cdn.masaischool.com/masai-website/iit-patna-logo.svg" alt="IIT Patna logo">
+            <div>
+                <h1>Vishlesan i-Hub IIT Patna</h1>
+                <h3>Product Management and Agentic AI</h3>
+                <p>06 months <span class="pipe"> | </span> online</p>
+                <p>Qualifier Test - <span class="date">12th Nov 2025</span></p>
+                <button class="first-button">Learn More →</button>
+                <button class="second-button">Brochure →</button>
+            </div>
+        </div>
+        <!-- Box 3 -->
+        <div class="box">
+            <img src="https://cdn.masaischool.com/masai-website/iit-patna-logo.svg" alt="IIT Patna logo">
+            <div>
+                <h1>Vishlesan i-Hub IIT Patna</h1>
+                <h3>Certification Program in Data Analytics with Gen & Agentic AI</h3>
+                <p>06 months <span class="pipe"> | </span> online</p>
+                <p>Qualifier Test - <span class="date">9th Nov 2025</span></p>
+                <button class="first-button">Learn More →</button>
+                <button class="second-button">Brochure →</button>
+            </div>
+        </div>
+        <!-- Box 4 -->
+        <div class="box">
+            <img src="https://cdn.masaischool.com/masai-website/iim-trichy-logo.png" alt="IIM Trichy logo">
+            <div>
+                <h1>IIM Trichy</h1>
+                <h3>Product Management in the Agentic AI Era</h3>
+                <p>06 months <span class="pipe"> | </span> online</p>
+                <p>Qualifier Test - <span class="date">12th Nov 2025</span></p>
+                <button class="first-button">Learn More →</button>
+                <button class="second-button">Brochure →</button>
+            </div>
+        </div>
+        <!-- Box 5 -->
+        <div class="box">
+            <img src="https://cdn.masaischool.com/masai-website/divyasampark-iit-roorkee-logo.png" alt="IIT Roorkee logo">
+            <div>
+                <h1>iHUB DivyaSampark, IIT Roorkee</h1>
+                <h3>Future-Ready Product Management with Applied AI Program</h3>
+                <p>06 months <span class="pipe"> | </span> online</p>
+                <p>Qualifier Test - <span class="date">12th Nov 2025</span></p>
+                <button class="first-button">Learn More →</button>
+                <button class="second-button">Brochure →</button>
+            </div>
+        </div>
+        <!-- Box 6 -->
+        <div class="box">
+            <img src="https://cdn.masaischool.com/masai-website/cdoe-nmims-logo.png" alt="NMIMS CDOE logo">
+            <div>
+                <h1>NMIMS CDOE</h1>
+                <h3>Online MBA</h3>
+                <p>02 Years <span class="pipe"> | </span> online</p>
+                <p>Qualifier Test - <span class="date">12th Nov 2025</span></p>
+                <button class="first-button">Learn More →</button>
+                <button class="second-button">Brochure →</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

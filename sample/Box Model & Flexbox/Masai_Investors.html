@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Masai Investors Grid</title>
+  <style>
+    body {
+      background: #f6f7fb;
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      padding: 40px 0;
+    }
+    .investor-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 15px rgba(80,80,80,0.08);
+      width: 240px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #eee;
+      overflow: hidden;
+    }
+    .card img.photo {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-bottom: 1px solid #eee;
+    }
+    .card .info {
+      padding: 16px 0 10px 0;
+      text-align: center;
+    }
+    .card .name {
+      font-weight: bold;
+      font-size: 1.16rem;
+      margin-bottom: 2px;
+    }
+    .card .role {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 7px;
+    }
+    .card .logo {
+      height: 28px;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="investor-grid">
+    <div class="card">
+      <img class="photo" src="https://cdn.masaischool.com/masai-website/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg" alt="Vijay Shekhar Sharma" />
+      <div class="info">
+        <div class="name">Vijay Shekhar Sharma</div>
+        <div class="role">Founder & CEO</div>
+        <img class="logo" src="https://cdn.masaischool.com/masai-website/paytm_rect_06df45a24f.svg" alt="Paytm" />
+      </div>
+    </div>
+    <div class="card">
+      <img class="photo" src="https://cdn.masaischool.com/masai-website/Rectangle_427_637d69bb57.png" alt="Kunal Shah" />
+      <div class="info">
+        <div class="name">Kunal Shah</div>
+        <div class="role">Founder</div>
+        <img class="logo" src="https://cdn.masaischool.com/masai-website/cred_0a47d7b4f8.png" alt="CRED" />
+      </div>
+    </div>
+    <div class="card">
+      <img class="photo" src="https://cdn.masaischool.com/masai-website/amrish_rau_pine_labs_144e5e587c.jpg" alt="Amrish Rau" />
+      <div class="info">
+        <div class="name">Amrish Rau</div>
+        <div class="role">CEO</div>
+        <img class="logo" src="https://cdn.masaischool.com/masai-website/pine_labs_0aa2407434.png" alt="Pine Labs" />
+      </div>
+    </div>
+    <!-- Continue for each investor using their image and logo links -->
+  </div>
+</body>
+</html>

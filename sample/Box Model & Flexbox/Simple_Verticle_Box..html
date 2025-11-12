@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vertical Box Example</title>
+  <style>
+    body {
+      background: #f6f7fb;
+    }
+    .vertical-box {
+      width: 90vw;
+      max-width: 500px;
+      margin: 50px auto;
+      background: #c2b5e3;
+      border-radius: 32px;
+      box-shadow: 0 6px 24px rgba(100,100,100,0.09);
+      padding: 28px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+    .vertical-box-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #383973;
+      text-align: center;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+    .vertical-card {
+      width: 80%;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 3px 8px rgba(80,80,80,0.06);
+      padding: 16px 0;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .vertical-card-title {
+      color: #888;
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .vertical-card-value {
+      font-size: 2.1rem;
+      font-weight: bold;
+      color: #232232;
+    }
+  </style>
+</head>
+<body>
+  <div class="vertical-box">
+    <div class="vertical-box-title">Highest &<br> Average CTC</div>
+    <div class="vertical-card">
+      <div class="vertical-card-title">Expected Increase in Salary Potential</div>
+      <div class="vertical-card-value">60%</div>
+    </div>
+    <div class="vertical-card">
+      <div class="vertical-card-title">Average CTC</div>
+      <div class="vertical-card-value">₹6.1 LPA</div>
+    </div>
+    <div class="vertical-card">
+      <div class="vertical-card-title">Highest CTC</div>
+      <div class="vertical-card-value">₹36 LPA</div>
+    </div>
+  </div>
+</body>
+</html>

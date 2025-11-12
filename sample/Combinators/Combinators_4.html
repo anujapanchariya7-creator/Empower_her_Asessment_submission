@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Webpage Layout with CSS Combinators</title>
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: #f6f9fa;
+      margin: 0;
+    }
+    nav {
+      background: #343a40;
+      padding: 18px;
+    }
+    nav > ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav > ul > li {
+      display: inline;
+      margin-right: 15px;
+      border-bottom: 2px solid #ED0331;
+      color: #fff;
+      font-weight: 500;
+      font-size: 17px;
+      padding-bottom: 5px;
+      cursor: pointer;
+    }
+    nav > ul > li:last-child {
+      margin-right: 0;
+    }
+
+    /* Adjacent sibling: h2 right after nav */
+    nav + h2 {
+      color: #ED0331;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 28px 0 10px 18px;
+    }
+
+    main {
+      display: flex;
+      gap: 24px;
+      margin: 0 18px;
+    }
+    .main-content {
+      flex: 2;
+    }
+    aside {
+      flex: 1;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #ddd;
+      margin-top: 18px;
+      padding: 18px;
+      height: fit-content;
+    }
+    aside h2 {
+      margin: 0 0 12px 0;
+      font-size: 19px;
+      color: #ED0331;
+    }
+    aside ul {
+      padding-left: 18px;
+    }
+    aside ul li {
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #343a40;
+    }
+    footer {
+      margin-top: 48px;
+      background: #343a40;
+      color: #fff;
+      text-align: center;
+      padding: 14px;
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+
+    /* Descendant combinator: all paragraphs within main */
+    main p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* General sibling combinator: p that follows h3 within article */
+    article h3 ~ p {
+      font-style: italic;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Services</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+  <h2>Welcome to Our Page</h2>
+  <main>
+    <section class="main-content">
+      <h2>Main Content</h2>
+      <article>
+         <h3>Article 1</h3>
+        <p>CSS (Cascading Style Sheets) is a stylesheet language used to define how HTML elements are displayed on 
+            screens, paper, or other media. It allows web developers to control layout, colors, fonts, 
+            spacing, and many other design aspects of their websites, while separating content from presentation</p>
+      </article>
+      <article>
+        <h3>Article 2</h3>
+        <p>JavaScript (JS) is a powerful programming language used in web development to add
+             interactivity, dynamic content, and control multimedia on web pages.
+             It is one of the core technologies of the web, alongside HTML and CSS.</p>
+      </article>
+    </section>
+    <aside>
+      <h2>Recent Posts</h2>
+      <ul>
+        <li>Why Learn CSS?</li>
+        <li>Top 5 JS Frameworks</li>
+        <li>Web Design Tips</li>
+      </ul>
+    </aside>
+  </main>
+  <footer>
+    <p>© 2025 MASAI.</p>
+  </footer>
+</body>
+</html>
