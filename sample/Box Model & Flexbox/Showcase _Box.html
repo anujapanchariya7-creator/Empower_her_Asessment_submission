@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=500, initial-scale=1.0" />
+  <title>Product Showcase Box</title>
+  <style>
+    body {
+      background: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+    .product-box {
+      width: 500px;
+      height: 600px;
+      margin: 10px auto;
+      padding: 30px;
+      border: 3px solid grey;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .product-image {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    h3 {
+      font-weight: bold;
+      font-size: 1.4rem;
+      margin: 10px 0 10px 0;
+      text-align: center;
+    }
+    p {
+      font-size: 1rem;
+      color: #444;
+      text-align: center;
+      margin: 10px 0 28px 0;
+    }
+    button {
+      padding: 12px 36px;
+      background-color: #2874f0;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-bottom: 16px;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background-color: #2556ac;
+    }
+    .assured-logo {
+      width: 80px;
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="product-box">
+    <img class="product-image" src="https://rukminim2.flixcart.com/image/612/612/xif0q/smartwatch/w/x/h/-original-imahfa7xspmxemvj.jpeg" alt="Samsung Galaxy Watch6 LTE"/>
+    <h3>SAMSUNG Galaxy Watch6 LTE (Graphite Strap, 44mm)</h3>
+    <p>
+      Advanced smartwatch with health monitoring features like <b>Blood Pressure</b> and <b>Heart Rate</b> tracking, premium design, LTE connectivity, and strong battery life — a perfect tech companion for your wrist.
+    </p>
+    <button>Buy Now</button>
+    <img class="assured-logo" src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png" alt="Flipkart Assured" />
+  </div>
+</body>
+</html>
