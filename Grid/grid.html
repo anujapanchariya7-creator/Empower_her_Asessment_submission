@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Numbered Grid Layout</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 120px);
+      gap: 10px;
+      max-width: 600px;
+      margin: 40px auto;
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+    .item1 { background: #00CFFF; }
+    .item2 { background: #FF4C06; }
+    .item3 { background: #497CFA; }
+    .item4 { background: #FFD600; color: #fff; }
+    .item5 { background: #8A38E6; }
+    .item6 { background: #32BC19; }
+    .item7 { background: #FF9E7A; color: #fff;}
+    .item8 { background: #2AC9C1; }
+    .item9 { background: #7B0000; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item item2">2.</div>
+    <div class="item item3">3.</div>
+    <div class="item item4">4.</div>
+    <div class="item item5">5.</div>
+    <div class="item item6">6.</div>
+    <div class="item item1">1.</div>
+    <div class="item item7">7.</div>
+    <div class="item item8">8.</div>
+    <div class="item item9">9.</div>
+  </div>
+</body>
+</html>

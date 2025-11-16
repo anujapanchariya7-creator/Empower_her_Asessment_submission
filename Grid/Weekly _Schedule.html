@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Primary Class Weekly Schedule</title>
+  <style>
+    body {
+      font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+      background: #fff;
+    }
+    .schedule-container {
+      display: grid;
+      grid-template-columns: 100px repeat(5, 160px);
+      grid-template-rows: 60px repeat(9, 54px) 54px;
+      gap: 10px;
+      justify-content: center;
+      padding: 40px 0 0 0;
+      background: #fff;
+    }
+    .day, .time, .cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      font-weight: bold;
+      border-radius: 25px;
+    }
+    .day {
+      background: #fde6fa;
+      color: #22295a;
+      font-size: 1.11rem;
+      grid-row: 1;
+      border-radius: 25px;
+    }
+    .day:nth-child(3), .day:nth-child(5) {
+      background: #fffab6;
+    }
+    .day:nth-child(4) {
+      background: #fde6fa;
+    }
+    .day:nth-child(6) {
+      background: #fffab6;
+    }
+    .day:nth-child(7) {
+      background: #fde6fa;
+    }
+    .time {
+      background: #c7f2ff;
+      color: #00496a;
+      font-size: 0.95rem;
+      font-weight: bold;
+      border-radius: 21px;
+    }
+    .cell {
+      background: #fde6fa;
+      color: #343140;
+      font-size: 1.11rem;
+    }
+    .cell.yellow {
+      background: #fffab6;
+      color: #343140;
+    }
+    .note-bar {
+      grid-column: 1 / span 6;
+      background: #c7f2ff;
+      color: #033648;
+      font-size: 1rem;
+      border-radius: 21px;
+      display: flex;
+      align-items: center;
+      padding-left: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="schedule-container">
+    <!-- Days Header -->
+    <div></div> <!-- empty for top-left corner -->
+    <div class="day">Monday</div>
+    <div class="day" style="background: #fffab6;">Tuesday</div>
+    <div class="day">Wednesday</div>
+    <div class="day" style="background: #fffab6;">Thursday</div>
+    <div class="day">Friday</div>
+
+    <!-- Times + Subject Cells -->
+    <div class="time">08:00</div>
+    <div class="cell">Math</div>
+    <div class="cell yellow">Environmental Science</div>
+    <div class="cell">English</div>
+    <div class="cell yellow">Math</div>
+    <div class="cell">English</div>
+
+    <div class="time">09:00</div>
+    <div class="cell">English</div>
+    <div class="cell yellow">Math</div>
+    <div class="cell">Hindi</div>
+    <div class="cell yellow">PT</div>
+    <div class="cell">Science</div>
+
+    <div class="time">10:00</div>
+    <div class="cell">PT</div>
+    <div class="cell yellow">Art</div>
+    <div class="cell">Environmental Science</div>
+    <div class="cell yellow">Math</div>
+    <div class="cell">Computer</div>
+
+    <div class="time">11:00</div>
+    <div class="cell">Hindi</div>
+    <div class="cell yellow">PT</div>
+    <div class="cell">Computer</div>
+    <div class="cell yellow">Science</div>
+    <div class="cell">Art</div>
+
+    <div class="time">12:00</div>
+    <div class="cell">Science</div>
+    <div class="cell yellow">Music</div>
+    <div class="cell">Math</div>
+    <div class="cell yellow">English</div>
+    <div class="cell">Math</div>
+
+    <div class="time">13:00</div>
+    <div class="cell">Lunch</div>
+    <div class="cell yellow">Lunch</div>
+    <div class="cell">Lunch</div>
+    <div class="cell yellow">Lunch</div>
+    <div class="cell">Lunch</div>
+
+    <div class="time">14:00</div>
+    <div class="cell">Art</div>
+    <div class="cell yellow">Math</div>
+    <div class="cell">Hindi</div>
+    <div class="cell yellow">Math</div>
+    <div class="cell">PT</div>
+
+    <div class="time">15:00</div>
+    <div class="cell">English</div>
+    <div class="cell yellow">Science</div>
+    <div class="cell">Exams</div>
+    <div class="cell yellow">English</div>
+    <div class="cell">Math</div>
+
+    <div class="time">16:00</div>
+    <div class="cell">Exams</div>
+    <div class="cell yellow">Hindi</div>
+    <div class="cell">PT</div>
+    <div class="cell yellow">Environmental Science</div>
+    <div class="cell">Music</div>
+
+    <!-- Note Bar -->
+    <div class="note-bar">Note:</div>
+  </div>
+</body>
+</html>
