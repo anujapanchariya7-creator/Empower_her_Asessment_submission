@@ -1,0 +1,57 @@
+<h2>form</h2>
+<input type="text" id ="name">
+<button onclick="saveData()">SAVE</button>
+<p id="msg"></p>
+<h2>list</h2>
+<table border="1" >
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody id="root"></tbody>
+    </table>
+    <script>
+        let index = -1;
+        function saveData(){
+            var name = document.getElementById("name").value;
+            var msg = document.getElementById("msg");
+            if(name === ""){
+                msg.innerHTML = "Name is required";
+                return;
+            }
+            let d=json.parse(localStorage.getItem("list") || "[]");
+            if(index === -1){
+                d.push(n);
+                document.getElementById("msg").innerHTML = "add values";
+        }else{
+            d[index] = n;
+            document.getElementById("msg").innerHTML = "Data updated successfully";
+            innerHTML ="data updated successfully";
+            index = -1;
+        
+        }
+        localStorage.setItem("list",JSON.stringify(d));
+        document.getElementById("name").value = "";
+        showData();
+    }
+
+        function showData(){
+            let d = JSON.parse(localStorage.getItem("list") || []);
+            let html = "";
+            for(let i=0; i<d.length; i++){
+                html += <tr>
+                <td>${i+1}</td>
+                <td>${d[i]}</td>
+                <td>
+                    <button onclick="editData(${i})">Edit</button>
+                    <button onclick="deleteData(${i})">Delete</button>
+                </td>
+                </tr>;
+            }    
+            document.getElementById("root").innerHTML = html;   
+         }
+         
+         </script>
