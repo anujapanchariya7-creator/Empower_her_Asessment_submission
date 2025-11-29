@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>List DOM</title>
+  </head>
+  <body>
+    <ul id="item-list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+
+    <button id="add-btn">Add Item</button>
+
+    <script>
+      const list = document.querySelector("#item-list");
+      const addBtn = document.querySelector("#add-btn");
+
+      addBtn.addEventListener("click", function () {
+        const li = document.createElement("li");
+        li.textContent = "New Item";
+        list.appendChild(li);
+
+        const index = list.children.length;
+
+        if (index % 2 === 1) {
+          li.style.fontWeight = "bold";
+          li.style.color = "blue";
+        } else {
+          li.style.fontStyle = "italic";
+          li.style.color = "red";
+        }
+      });
+    </script>
+  </body>
+</html>
