@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Color & Text Changer</title>
+  </head>
+  <body>
+    <h2>Change Div Background & Text</h2>
+
+    <!-- color input -->
+    <input
+      id="color-input"
+      type="text"
+      placeholder="Enter color name (e.g. red, blue)"
+    />
+    <button id="bg-btn">Change Background</button>
+
+    <br /><br />
+
+    <!-- text input -->
+    <input
+      id="text-input"
+      type="text"
+      placeholder="Enter new text for the box"
+    />
+    <button id="text-btn">Update Text</button>
+
+    <br /><br />
+
+    <!-- target div -->
+    <div
+      id="box"
+      style="padding: 20px; border: 1px solid #000; width: 300px;"
+    >
+      This is the initial content.
+    </div>
+
+    <script>
+      const colorInput = document.getElementById("color-input");
+      const textInput = document.getElementById("text-input");
+      const box = document.getElementById("box");
+      const bgBtn = document.getElementById("bg-btn");
+      const textBtn = document.getElementById("text-btn");
+
+      // helper: check if a string is a valid CSS color
+      function isValidColor(color) {
+        const test = new Option().style;
+        test.color = color;
+        return test.color !== "";
+      }
+
+      // Change background color
+      bgBtn.addEventListener("click", function () {
+        const color = colorInput.value.trim();
+
+        if (!isValidColor(color)) {
+          alert("Invalid color name!");
+          return;
+        }
+
+        box.style.backgroundColor = color;
+      });
+
+      // Update text content
+      textBtn.addEventListener("click", function () {
+        const text = textInput.value.trim();
+
+        if (text === "") {
+          alert("Please enter some text!");
+          return;
+        }
+
+        box.textContent = text;
+      });
+    </script>
+  </body>
+</html>
