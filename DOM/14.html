@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Debugging Task Working</title>
+</head>
+<body>
+  <p id="message">Original Message</p>
+  <button id="textButton">Change Text</button>
+  <br><br>
+
+  <div id="box" style="width: 100px; height: 100px; background-color: lightgray;"></div>
+  <button id="colorButton">Change Background</button>
+
+  <script>
+    // select paragraph by correct id
+    const para = document.getElementById("message");
+
+    // select text button by id
+    const textButton = document.getElementById("textButton"); [web:134][web:136]
+
+    // when text button clicked, change paragraph text
+    textButton.addEventListener("click", function () {
+      para.textContent = "New Message";
+    });
+
+    // select box and color button
+    const box = document.getElementById("box");
+    const colorButton = document.getElementById("colorButton"); [web:81]
+
+    // when color button clicked, change background color to blue
+    colorButton.addEventListener("click", function () {
+      box.style.backgroundColor = "blue";
+    });
+  </script>
+</body>
+</html>
