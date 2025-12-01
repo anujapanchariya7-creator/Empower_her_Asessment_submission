@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add / Remove Paragraphs</title>
+</head>
+<body>
+  <!-- Button to add a new paragraph -->
+  <button id="add-btn">Add Paragraph</button>
+
+  <!-- Button to remove the last paragraph -->
+  <button id="remove-btn">Remove Last Paragraph</button>
+
+  <!-- Div where all paragraphs will be added -->
+  <div id="para-container"></div>
+
+  <script>
+    // Get buttons and div
+    const addBtn = document.getElementById("add-btn");
+    const removeBtn = document.getElementById("remove-btn");
+    const container = document.getElementById("para-container");
+
+    // Add a new paragraph on each click
+    addBtn.addEventListener("click", function () {
+      // createElement -> create <p>
+      const p = document.createElement("p");
+      // Set text
+      p.textContent = "This is a new paragraph.";
+      // appendChild -> add <p> inside div
+      container.appendChild(p);
+    });
+
+    // Remove the last paragraph on click
+    removeBtn.addEventListener("click", function () {
+      // Get last child element of the div
+      const lastPara = container.lastElementChild;
+      // If it exists, removeChild -> remove it
+      if (lastPara) {
+        container.removeChild(lastPara);
+      }
+    });
+  </script>
+</body>
+</html>
