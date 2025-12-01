@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Notes with localStorage</title>
+</head>
+<body>
+  <h1>User Notes</h1>
+
+  <!-- Text area where user types notes -->
+  <textarea id="notes" rows="10" cols="50" placeholder="Write your notes here..."></textarea>
+  <br />
+
+  <!-- Buttons for actions -->
+  <button id="save-btn">Save Notes</button>
+  <button id="load-btn">Load Notes</button>
+  <button id="clear-btn">Clear Notes</button>
+
+  <script>
+    const NOTES_KEY = "userNotes"; // key used in localStorage
+    const textarea = document.getElementById("notes");
+    const saveBtn = document.getElementById("save-btn");
+    const loadBtn = document.getElementById("load-btn");
+    const clearBtn = document.getElementById("clear-btn");
+
+    // On page load: check localStorage and show saved notes if present
+    window.addEventListener("DOMContentLoaded", function () {
+      const savedNotes = localStorage.getItem(NOTES_KEY);
+      if (savedNotes) {
+        textarea.value = savedNotes; // display saved notes
+      }
+    });
+
+    // Save notes (with validation: do not save empty text)
+    saveBtn.addEventListener("click", function () {
+      const text = textarea.value.trim();
+      if (text === "") {
+        alert("Cannot save empty notes.");
+        return;
+      }
+      localStorage.setItem(NOTES_KEY, text); // save to localStorage
+      alert("Notes saved!");
+    });
+
+    // Load notes from localStorage into textarea
+    loadBtn.addEventListener("click", function () {
+      const savedNotes = localStorage.getItem(NOTES_KEY);
+      if (savedNotes) {
+        textarea.value = savedNotes;
+      } else {
+        alert("No saved notes found.");
+      }
+    });
+
+    // Clear notes from localStorage and textarea
+    clearBtn.addEventListener("click", function () {
+      localStorage.removeItem(NOTES_KEY); // delete only this key
+      textarea.value = "";
+      alert("Notes cleared.");
+    });
+  </script>
+</body>
+</html>
