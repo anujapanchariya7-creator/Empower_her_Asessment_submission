@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Enhanced Todo List</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .done { text-decoration: line-through; color: gray; }
+    li { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+    button { cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Todo List</h1>
+
+  <!-- Input to add new task -->
+  <input id="task-input" type="text" placeholder="Add new task" />
+  <button id="add-btn">Add</button>
+
+  <!-- Search bar for real-time filtering -->
+  <br /><br />
+  <input id="search-input" type="text" placeholder="Search tasks..." />
+
+  <!-- List where tasks will appear -->
+  <ul id="task-list"></ul>
+
+  <script>
+    // KEY used in localStorage
+    const STORAGE_KEY = "todos";
+
+    // Get DOM elements
+    const taskInput = document.getElementById("task-input");
+    const addBtn = document.getElementById("add-btn");
+    const searchInput = document.getElementById("search-input");
+    const taskList = document.getElementById("task-list");
+
+    // Load tasks array from localStorage (JSON array of objects)
+    function loadTasks() {
+      const data = localStorage.getItem(STORAGE_KEY);
+      return data ? JSON.parse(data) : [];
+    }
+
+    // Save tasks array to localStorage
+    function saveTasks(tasks) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+    }
+
+    // Create a unique id for each task
+    function createId() {
+      return Date.now() + Math.random().toString(16).slice(2);
+    }
+
+    // Render tasks to UI, with optional filter text
+    function renderTasks(filterText = "") {
+      const tasks = loadTasks();
+      taskList.innerHTML = "";
+
+      const lowerFilter = filterText.toLowerCase();
+
+      tasks
+        .filter(t => t.text.toLowerCase().includes(lowerFilter))
+        .forEach(task => {
+          const li = document.createElement("li");
+          li.dataset.id = task.id;
+
+          const span = document.createElement("span");
+          span.textContent = task.text;
+          if (task.completed) span.classList.add("done");
+
+          // Button to toggle completion status
+          const completeBtn = document.createElement("button");
+          completeBtn.textContent = task.completed ? "Undo" : "Done";
+
+          // Button to delete the task
+          const deleteBtn = document.createElement("button");
+          deleteBtn.textContent = "Delete";
+
+          // Toggle completed
+          completeBtn.addEventListener("click", () => {
+            const allTasks = loadTasks();
+            const index = allTasks.findIndex(t => t.id === task.id);
+            if (index !== -1) {
+              allTasks[index].completed = !allTasks[index].completed;
+              saveTasks(allTasks);
+              renderTasks(searchInput.value);
+            }
+          });
+
+          // Delete task
+          deleteBtn.addEventListener("click", () => {
+            const allTasks = loadTasks().filter(t => t.id !== task.id);
+            saveTasks(allTasks);
+            renderTasks(searchInput.value);
+          });
+
+          li.appendChild(span);
+          li.appendChild(completeBtn);
+          li.appendChild(deleteBtn);
+          taskList.appendChild(li);
+        });
+    }
+
+    // Add new task
+    addBtn.addEventListener("click", () => {
+      const text = taskInput.value.trim();
+      if (!text) return;
+
+      const tasks = loadTasks();
+      tasks.push({
+        id: createId(),      // unique ID
+        text: text,          // task text
+        completed: false     // completion status
+      });
+
+      saveTasks(tasks);
+      taskInput.value = "";
+      renderTasks(searchInput.value);
+    });
+
+    // Press Enter to add
+    taskInput.addEventListener("keydown", e => {
+      if (e.key === "Enter") addBtn.click();
+    });
+
+    // Real-time search
+    searchInput.addEventListener("input", () => {
+      renderTasks(searchInput.value);
+    });
+
+    // Initial render on page load
+    renderTasks();
+  </script>
+</body>
+</html>
